@@ -35,6 +35,7 @@ namespace tabuleiro
             {
                 throw new TabuleiroException("Ja existe uma peça nessa posicao!");
             }
+
             pecas[pos.linha, pos.coluna] = p;
             p.posicao = pos;
         }
@@ -45,6 +46,7 @@ namespace tabuleiro
             {
                 return false;
             }
+
             return true;
         }
 
@@ -53,8 +55,7 @@ namespace tabuleiro
             if (!posicaoValida(pos))
             {
                 throw new TabuleiroException("Posiçao invalida!");
-            }  
+            }
         }
     }
 }
-

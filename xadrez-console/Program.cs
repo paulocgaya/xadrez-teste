@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Security;
 using tabuleiro;
 using xadrez;
 
@@ -12,8 +11,7 @@ namespace xadrez_console {
 
                 while (!partida.terminada) {
 
-                    try
-                    {
+                    try {
                         Console.Clear();
                         Tela.imprimirPartida(partida);
 
@@ -32,14 +30,15 @@ namespace xadrez_console {
                         Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
                         partida.validarPosicaoDeDestino(origem, destino);
 
-                        partida.realizajogada(origem, destino);
+                        partida.realizaJogada(origem, destino);
                     }
                     catch (TabuleiroException e) {
                         Console.WriteLine(e.Message);
                         Console.ReadLine();
                     }
                 }
-
+                Console.Clear();
+                Tela.imprimirPartida(partida);
             }
             catch (TabuleiroException e) {
                 Console.WriteLine(e.Message);
